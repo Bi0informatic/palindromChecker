@@ -12,7 +12,7 @@ function ifInvalidInput() {
 
 //removes all non-alphanumeric characters (punctation, spaces, and symbols), turns every character to lower
 function cleanInput(str) {
-    return str.replace(/[^a-zA-Z0-9]/g, '');
+    return str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
 }
 
 //checks if valid then if palindrome
