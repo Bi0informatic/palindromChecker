@@ -22,10 +22,24 @@ function onSubmit() {
 }
 
 function isPalindrome(str) {
-    if (str.length === 1) {
+    const wordArray = [...str];
+    const arrayLength = wordArray.length;
+    if (arrayLength === 1) {
+        return true;
+    } else if (arrayLength%2 === 1) {
+        for (let i = 0; i<Math.ceil(arrayLength/2); i++) {
+            if (wordArray[i]!==wordArray[arrayLength-1-i]) {
+                return false;
+            }
+        }
         return true;
     } else {
-        return false;
+        for (let i = 0; i<arrayLength/2; i++) {
+            if (wordArray[i]!==wordArray[arrayLength-1-i]) {
+                return false;
+            }
+        }
+        return true;
     }
 }
 
