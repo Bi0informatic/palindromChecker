@@ -18,33 +18,20 @@ function cleanInput(str) {
 //checks if valid then if palindrome
 function onSubmit() {
     ifInvalidInput();
-    textResult.innerHTML = palindromeResultMessage(cleanInput(textInput.value)); 
+    textResult.innerHTML = palindromeResultMessage(textInput.value); 
 }
 
 function isPalindrome(str) {
-    const wordArray = [...str];
-    const arrayLength = wordArray.length;
-    if (arrayLength === 1) {
-        return true;
-    } else if (arrayLength%2 === 1) {
-        for (let i = 0; i<Math.ceil(arrayLength/2); i++) {
-            if (wordArray[i]!==wordArray[arrayLength-1-i]) {
-                return false;
-            }
+    for (let i = 0; i < str.length/2; i++) {
+        if (str[i] !== str[str.length-1-i]) {
+            return false;
         }
-        return true;
-    } else {
-        for (let i = 0; i<arrayLength/2; i++) {
-            if (wordArray[i]!==wordArray[arrayLength-1-i]) {
-                return false;
-            }
-        }
-        return true;
     }
+    return true;
 }
 
 function palindromeResultMessage(str) {
-    if (isPalindrome(str)) {
+    if (isPalindrome(cleanInput(str))) {
         return `${str} is a palindrome`
     } else {
         return `${str} is not a palindrome`
