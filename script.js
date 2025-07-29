@@ -1,5 +1,6 @@
 const textInput = document.getElementById("text-input");
 const checkButton = document.getElementById("check-btn");
+const textResult = document.getElementById("result");
 
 //alerts page if input is empty
 function ifInvalidInput() {
@@ -16,7 +17,24 @@ function cleanInput(str) {
 
 //checks if valid then if palindrome
 function onSubmit() {
-    ifInvalidInput(); 
+    ifInvalidInput();
+    textResult.innerHTML = palindromeResultMessage(cleanInput(textInput.value)); 
+}
+
+function isPalindrome(str) {
+    if (str.length === 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function palindromeResultMessage(str) {
+    if (isPalindrome(str)) {
+        return `${str} is a palindrome`
+    } else {
+        return `${str} is not a palindrome`
+    }
 }
 
 checkButton.addEventListener("click", onSubmit);
