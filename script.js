@@ -3,10 +3,12 @@ const checkButton = document.getElementById("check-btn");
 const textResult = document.getElementById("result");
 
 //alerts page if input is empty
-function ifInvalidInput() {
+function isInvalidInput() {
     if (!cleanInput(textInput.value)) {
         alert("Please input a value");
-        return;
+        return true;
+    } else {
+        return false;
     }
 }
 
@@ -17,8 +19,9 @@ function cleanInput(str) {
 
 //checks if valid then if palindrome
 function onSubmit() {
-    ifInvalidInput();
-    textResult.innerHTML = palindromeResultMessage(textInput.value); 
+    if (!isInvalidInput()) {
+        textResult.innerHTML = palindromeResultMessage(textInput.value); 
+    }
 }
 
 function isPalindrome(str) {
