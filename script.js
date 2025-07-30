@@ -1,6 +1,7 @@
 const textInput = document.getElementById("text-input");
 const checkButton = document.getElementById("check-btn");
 const textResult = document.getElementById("result");
+const sectionResult = document.getElementById("result-section")
 
 //alerts page if input is empty
 function isInvalidInput() {
@@ -21,6 +22,7 @@ function cleanInput(str) {
 function onSubmit() {
     if (!isInvalidInput()) {
         textResult.innerHTML = palindromeResultMessage(textInput.value); 
+        sectionResult.style.display = "block";
     }
 }
 
