@@ -1,3 +1,7 @@
+:: {
+    font-size: 100px;
+}
+
 body {
     display: flex;
     align-items: center;
@@ -7,15 +11,18 @@ body {
     background-color: grey;
 }
 
-#text-input-section {
-    padding: 2rem;
+section {
     background-color: rgb(116, 121, 125);
+    border: 2px solid #333333;
     border-radius: 10px;
 }
 
+#text-input-section {
+    padding: 2rem;
+}
+
 #result-section {
+    margin: 1rem;
     padding: 1rem;
-    background-color: rgb(116, 121, 125);
     display: none;
-    border-radius: 10px;
 }
