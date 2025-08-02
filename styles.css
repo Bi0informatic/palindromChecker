@@ -5,6 +5,7 @@ body {
     flex-direction: column;
     height: 100vh;
     background-color: grey;
+    overflow: hidden;
 }
 
 section {
